@@ -1,0 +1,18 @@
+'use strict';
+
+var myApp = angular.module('app', []);
+
+$(document).ready(function() {
+	$('a[href^="#"]').on('click', function(event) {
+
+	    var target = $(this.getAttribute('href'));
+
+	    if( target.length ) {
+	        event.preventDefault();
+	        $('html, body').stop().animate({
+	            scrollTop: target.offset().top + (-60)
+	        }, 1000);
+	    }
+
+	});
+});
